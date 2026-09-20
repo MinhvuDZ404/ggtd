@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#141021">
+<meta name="description" content="Gold Tower Defence M — Fantasy Tower Defense RPG">
+<title>GOLD TOWER DEFENCE M</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="assets/ui/emblem.svg" type="image/svg+xml">
+</head>
+<body>
+<div id="app">
+  <!-- Boot / loading screen -->
+  <div id="boot">
+    <div class="boot-inner">
+      <div class="boot-logo">
+        <div class="boot-crown"><img src="assets/ui/emblem.svg" alt="" style="width:84px;height:84px;filter:drop-shadow(0 0 22px #f5c54288)"></div>
+        <h1 class="boot-title">GOLD TOWER<br><span>DEFENCE M</span></h1>
+      </div>
+      <div class="boot-bar"><div class="boot-bar-fill" id="bootFill"></div></div>
+      <div class="boot-tip" id="bootTip">Đang triệu hồi các anh hùng…</div>
+    </div>
+  </div>
+
+  <!-- Top resource bar (hidden during battle) -->
+  <header id="topbar" class="hidden">
+    <div class="tb-left">
+      <div class="tb-avatar" id="tbAvatar">1</div>
+      <div class="tb-lvl">
+        <div class="tb-lvl-num" id="tbLevel">Lv.1</div>
+        <div class="tb-xp"><div class="tb-xp-fill" id="tbXpFill"></div></div>
+      </div>
+    </div>
+    <div class="tb-currencies" id="tbCurrencies"></div>
+    <div class="tb-right">
+      <button class="tb-btn" id="btnMail" title="Mail">✉️<span class="badge hidden" id="mailBadge">0</span></button>
+      <button class="tb-btn" id="btnSettings" title="Settings">⚙️</button>
+    </div>
+  </header>
+
+  <!-- Scene container -->
+  <main id="scene"></main>
+
+  <!-- Battle screen (canvas + HUD), toggled separately -->
+  <div id="battle" class="hidden">
+    <canvas id="gameCanvas"></canvas>
+    <div id="battleHud"></div>
+  </div>
+
+  <!-- Global overlay layers -->
+  <div id="modalLayer"></div>
+  <div id="toastLayer"></div>
+  <div id="fxLayer"></div>
+
+  <!-- Bottom navigation (lobby scenes) -->
+  <nav id="navbar" class="hidden">
+    <button class="nav-btn" data-nav="lobby"><span class="nav-ico">🏰</span><span class="nav-lbl" data-i18n="nav.lobby">Sảnh</span></button>
+    <button class="nav-btn" data-nav="stages"><span class="nav-ico">🗺️</span><span class="nav-lbl" data-i18n="nav.stages">Ải</span></button>
+    <button class="nav-btn nav-main" data-nav="battlehub"><span class="nav-ico">⚔️</span><span class="nav-lbl" data-i18n="nav.battle">Chiến</span></button>
+    <button class="nav-btn" data-nav="heroes"><span class="nav-ico">🦸</span><span class="nav-lbl" data-i18n="nav.heroes">Tướng</span></button>
+    <button class="nav-btn" data-nav="towers"><span class="nav-ico">🗼</span><span class="nav-lbl" data-i18n="nav.towers">Tháp</span></button>
+    <button class="nav-btn" data-nav="summon"><span class="nav-ico">🎴</span><span class="nav-lbl" data-i18n="nav.summon">Triệu hồi</span></button>
+    <button class="nav-btn" data-nav="quests"><span class="nav-ico">📜</span><span class="nav-lbl" data-i18n="nav.quests">Nhiệm vụ</span></button>
+  </nav>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
